@@ -4,7 +4,8 @@ export default function Navbar() {
     <nav>
         <Link href="/">Home</Link> {" | "}
         <Link href="/about">About</Link> {" | "}
-        <Link href="/contact">Contact</Link>
+        <Link href="/contact">Contact</Link> {" | "}
+        <Link href="/products/1">Product</Link>
     </nav>
   );
 }
