@@ -1,5 +1,9 @@
 import React from "react";
 import Image from "next/image";
+export const metadata = {
+title: "Home",
+description: "Welcome to my Website",
+};
 function Home() {
   return (
     <div>
