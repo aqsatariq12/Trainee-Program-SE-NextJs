@@ -13,18 +13,43 @@ function getUserInfo() {
     }, 3000);
   });
 }
+function getProductInfo() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve({
+        product: [
+          { id: 1, name: "Laptop" },
+          { id: 2, name: "Mouse" },
+          { id: 3, name: "Printer" },
+        ],
+      });
+    }, 2000);
+  });
+}
 export default async function User() {
-  const [{ user }] = await Promise.all([getUserInfo()]);
+  const [{ user }, { product }] = await Promise.all([
+    getUserInfo(),
+    getProductInfo(),
+  ]);
   console.log("user", user);
+  console.log("product", product);
   return (
     <div>
       <h1>User Data (Server Component)</h1>
+      <h1>USERS</h1>
+
       {user.map((u) => {
         return (
           <p key={u.id}>
             {u.name} {u.contact} {u.age}
           </p>
         );
+      })}
+
+      <h1>Products</h1>
+
+      {product.map((p) => {
+        return <p key={p.id}>{p.name}</p>;
       })}
     </div>
   );
