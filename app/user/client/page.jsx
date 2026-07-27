@@ -1,7 +1,8 @@
 "use client";
-import React from "react";
+import React, { use } from "react";
 import { useState, useEffect } from "react";
 export default function Client() {
+  const [products, setProducts] = useState([]);
   const [users, setUsers] = useState([]);
   useEffect(() => {
     async function fetchUser() {
@@ -9,16 +10,19 @@ export default function Client() {
       const data = await res.json();
       const userss = data.users;
       setUsers(userss);
-      console.log("Data = ", userss);
     }
     fetchUser();
   }, []);
-
   return (
     <div>
-        <h1>User Data (Client Component)</h1>
+
+      <h1>User Data (Client Component)</h1>
       {users.map((u) => {
-        return <p key={u.id}>First Name: {u.firstName},  Last Name:{u.lastName}</p>;
+        return (
+          <p key={u.id}>
+            First Name: {u.firstName}, Last Name:{u.lastName}
+          </p>
+        );
       })}
     </div>
   );
