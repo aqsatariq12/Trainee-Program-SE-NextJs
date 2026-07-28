@@ -54,6 +54,13 @@ export default function Navbar() {
           </Link>
 
           <Link
+            href="/upload"
+            className="text-gray-300 hover:text-white hover:bg-slate-700 px-3 py-2 rounded-md transition"
+          >
+            Upload File
+          </Link>
+
+          <Link
             href="/serverAction"
             className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition"
           >
