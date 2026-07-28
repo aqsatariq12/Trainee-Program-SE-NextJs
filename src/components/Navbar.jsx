@@ -108,6 +108,16 @@ export default function Navbar() {
           >
             Server Products
           </Link>
+          <Link
+            href="/login"
+            className={`px-3 py-2 rounded-md transition ${
+              pathname === "/login"
+                ? "bg-blue-600 text-white"
+                : "text-gray-300 hover:text-white hover:bg-slate-700"
+            }`}
+          >
+            Auth Middleware
+          </Link>
         </div>
       </div>
     </nav>
