@@ -19,3 +19,12 @@ export default async function Dashboard() {
     </div>
   );
 }
+
+
+// import React from 'react'
+
+// export default function page() {
+//   return (
+//     <div>Welcome to dashboard</div>
+//   )
+// }
