@@ -1,9 +1,21 @@
-export default function Dashboard() {
+import { UserButton } from "@clerk/nextjs";
+import { currentUser } from "@clerk/nextjs/server";
+
+export default async function Dashboard() {
+
+  const user = await currentUser();
+
   return (
-    <div className="min-h-screen flex justify-center items-center">
-      <h1 className="text-4xl font-bold text-green-600">
-        Welcome to Dashboard 🎉
+    <div className="min-h-screen flex flex-col justify-center items-center gap-6">
+
+      <UserButton afterSignOutUrl="/sign-in" />
+
+      <h1 className="text-3xl font-bold">
+        Welcome {user?.firstName}
       </h1>
+
+      <p>{user?.emailAddresses[0].emailAddress}</p>
+
     </div>
   );
 }

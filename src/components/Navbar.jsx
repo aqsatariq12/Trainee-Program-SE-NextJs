@@ -116,7 +116,17 @@ export default function Navbar() {
                 : "text-gray-300 hover:text-white hover:bg-slate-700"
             }`}
           >
-            Auth Middleware
+            Auth Custom Middleware 
+          </Link>
+          <Link
+            href="/sign-in"
+            className={`px-3 py-2 rounded-md transition ${
+              pathname === "/sign-in"
+                ? "bg-blue-600 text-white"
+                : "text-gray-300 hover:text-white hover:bg-slate-700"
+            }`}
+          >
+            Auth CLerk Middleware 
           </Link>
         </div>
       </div>
