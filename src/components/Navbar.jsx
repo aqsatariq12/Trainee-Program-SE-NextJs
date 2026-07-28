@@ -1,6 +1,8 @@
+"use client";
 import Link from "next/link";
-
+import { usePathname } from "next/navigation";
 export default function Navbar() {
+  const pathname = usePathname();
   return (
     <nav className="bg-slate-900 shadow-lg">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
@@ -11,62 +13,98 @@ export default function Navbar() {
         <div className="flex flex-wrap gap-3">
           <Link
             href="/"
-            className="text-gray-300 hover:text-white hover:bg-slate-700 px-3 py-2 rounded-md transition"
+            className={`px-3 py-2 rounded-md transition ${
+              pathname === "/"
+                ? "bg-blue-600 text-white"
+                : "text-gray-300 hover:text-white hover:bg-slate-700"
+            }`}
           >
             Home
           </Link>
 
           <Link
             href="/about"
-            className="text-gray-300 hover:text-white hover:bg-slate-700 px-3 py-2 rounded-md transition"
+            className={`px-3 py-2 rounded-md transition ${
+              pathname === "/about"
+                ? "bg-blue-600 text-white"
+                : "text-gray-300 hover:text-white hover:bg-slate-700"
+            }`}
           >
             About
           </Link>
 
           <Link
             href="/contact"
-            className="text-gray-300 hover:text-white hover:bg-slate-700 px-3 py-2 rounded-md transition"
+            className={`px-3 py-2 rounded-md transition ${
+              pathname === "/contact"
+                ? "bg-blue-600 text-white"
+                : "text-gray-300 hover:text-white hover:bg-slate-700"
+            }`}
           >
             Contact
           </Link>
 
           <Link
             href="/products"
-            className="text-gray-300 hover:text-white hover:bg-slate-700 px-3 py-2 rounded-md transition"
+            className={`px-3 py-2 rounded-md transition ${
+              pathname === "/products"
+                ? "bg-blue-600 text-white"
+                : "text-gray-300 hover:text-white hover:bg-slate-700"
+            }`}
           >
             Products
           </Link>
 
           <Link
             href="/user"
-            className="text-gray-300 hover:text-white hover:bg-slate-700 px-3 py-2 rounded-md transition"
+            className={`px-3 py-2 rounded-md transition ${
+              pathname === "/user"
+                ? "bg-blue-600 text-white"
+                : "text-gray-300 hover:text-white hover:bg-slate-700"
+            }`}
           >
             User
           </Link>
 
           <Link
             href="/user/client"
-            className="text-gray-300 hover:text-white hover:bg-slate-700 px-3 py-2 rounded-md transition"
+            className={`px-3 py-2 rounded-md transition ${
+              pathname === "/user/client"
+                ? "bg-blue-600 text-white"
+                : "text-gray-300 hover:text-white hover:bg-slate-700"
+            }`}
           >
             Client
           </Link>
 
           <Link
             href="/upload"
-            className="text-gray-300 hover:text-white hover:bg-slate-700 px-3 py-2 rounded-md transition"
+            className={`px-3 py-2 rounded-md transition ${
+              pathname === "/upload"
+                ? "bg-blue-600 text-white"
+                : "text-gray-300 hover:text-white hover:bg-slate-700"
+            }`}
           >
             Upload File
           </Link>
           <Link
             href="/search"
-            className="text-gray-300 hover:text-white hover:bg-slate-700 px-3 py-2 rounded-md transition"
+            className={`px-3 py-2 rounded-md transition ${
+              pathname === "/search"
+                ? "bg-blue-600 text-white"
+                : "text-gray-300 hover:text-white hover:bg-slate-700"
+            }`}
           >
             Search API
           </Link>
 
           <Link
             href="/serverAction"
-            className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition"
+            className={`px-3 py-2 rounded-md transition ${
+              pathname === "/serverAction"
+                ? "bg-blue-600 text-white"
+                : "text-gray-300 hover:text-white hover:bg-slate-700"
+            }`}
           >
             Server Products
           </Link>
